@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
+    # project apps
+    "tracker",
 ]
 
 SITE_ID = 1
@@ -127,9 +129,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
+
 STATIC_URL = "static/"
 
 STATICFILES_DIRS = [BASE_DIR / "static"]
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
@@ -142,5 +146,8 @@ INTERNAL_IPS = [
     # ...
 ]
 
-# AUTH_USER_MODEL = "tracker.User"
+AUTH_USER_MODEL = "tracker.User"
 LOGIN_REDIRECT_URL = "index"
+
+
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
